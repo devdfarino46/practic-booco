@@ -1,0 +1,68 @@
+.fastreq {
+
+    &__container {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__wrapper {
+        max-width: 1048px;
+        padding: 40px clamp(1.25rem, -1.236rem + 5.52vw, 3.75rem);
+        box-sizing: border-box;
+    }
+
+    &__form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px 30px;
+        margin-top: 24px;
+
+        @media (max-width: 992px) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__coll {
+        display: grid;
+        gap: 20px 30px;
+    }
+
+    &__form-item {
+        &._contact {
+            
+        }
+
+        &._phone {
+            
+        }
+
+        &._task {
+            grid-column: 1 / 2;
+            grid-row: 1;
+            min-height: 80px;
+        }
+
+        &._submit {
+            grid-column: auto;
+            grid-row: 1;
+
+            @media (max-width: 580px) {
+                grid-row: 2;
+            }
+        }
+    }
+
+    &__submit {
+        padding-left: 14px;
+        padding-right: 14px;
+
+        @media (any-hover: hover) {
+            &:hover {
+                padding-left: 12px;
+                padding-right: 12px;
+            }
+        }
+
+        
+    }
+}

@@ -1,0 +1,33 @@
+.header {
+    padding: 30px 0;
+
+    &__container {
+        display: flex;
+        gap: clamp(1.25rem, -29.482rem + 38.41vw, 5.188rem);
+        align-items: center;
+    }
+
+    &__logo {
+        margin-right: auto;
+    }
+
+    &__nav {
+        @media (max-width: 920px) {
+            display: none;
+        }
+    }
+
+    &__subscr {
+        padding: 11px 45px;
+
+        @media (max-width: 490px) {
+            display: none;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                padding: 11px 45px;
+            }
+        }
+    }
+}

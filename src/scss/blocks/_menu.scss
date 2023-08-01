@@ -1,0 +1,40 @@
+.menu {
+    position: fixed;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    box-sizing: border-box;
+    overflow: auto;
+
+    background: white;
+    border-radius: 20px;
+    top: 0;
+    bottom: 0;
+    right: -400px;
+    margin: 20px;
+    border: 1px solid var(--accent-color);
+    width: 300px;
+    transition: right 0.5s ease;
+    z-index: 2;
+    padding: 70px 40px;
+
+    &._active {
+        right: 0;
+    }
+
+    &__list {
+        flex-direction: column;
+        align-items: flex-start;
+        row-gap: 20px;
+    }
+
+    &__link {
+        font-size: 26px;
+    }
+
+    &__close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+}

@@ -1,0 +1,50 @@
+.about {
+    margin-bottom: 200px;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__content {
+        margin-top: 80px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    &__item-wrapper {
+        display: flex;
+        flex-direction: column;
+        flex: 1 368px;
+    }
+
+    &__item-num {
+        color: var(--accent2-color);
+        text-align: center;
+        font-size: 144px;
+        font-weight: 700;
+        line-height: 110%; /* 158.4px */
+        margin-bottom: -79px;
+    }
+
+    &__item {
+        padding: clamp(2.5rem, 1.387rem + 2.62vw, 3.75rem) clamp(1.25rem, 0.137rem + 2.62vw, 2.5rem);
+        box-sizing: border-box;
+        flex: 1;
+    }
+    &__item-label {
+        line-height: 1.3;
+
+        .span-solid {
+            padding-block: 0 1px;
+            padding-inline: 2px 1px;
+        }
+    }
+
+    &__item-descr {
+        margin-top: clamp(0.625rem, -0.599rem + 2.88vw, 2rem);
+    }
+}

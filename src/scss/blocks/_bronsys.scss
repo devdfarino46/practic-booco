@@ -1,0 +1,54 @@
+.bronsys {
+    margin-top: 200px;
+    margin-bottom: 200px;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__title {
+        max-width: 760px;
+    }
+
+    &__wrapper {
+        margin-top: 80px;
+        display: flex;
+        gap: 40px 20px;
+        justify-content: center;
+        box-sizing: border-box;
+        padding: clamp(3.125rem, 0.017rem + 6.91vw, 6.25rem) clamp(1.25rem, -1.236rem + 5.52vw, 3.75rem);
+        flex: 1224px 0 auto;
+
+        @media (max-width: 780px) {
+            flex-direction: column;
+        }
+    }
+
+    &__content {
+        max-width: 434px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__descr {
+        color: rgba(31, 31, 31, 0.80);
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 130%; /* 26px */
+        margin-top: clamp(0.938rem, -0.008rem + 2.23vw, 2rem);
+    }
+
+    &__image-wrapper {
+        flex: 0 0 calc(632px / 1444px * 100%);
+        align-self: center;
+    }
+
+    &__image {
+        width: 100%;
+        height: auto;
+        border-radius: 14px;
+        filter: drop-shadow(0px 15px 40px rgba(191, 191, 191, 0.60));
+    }
+}

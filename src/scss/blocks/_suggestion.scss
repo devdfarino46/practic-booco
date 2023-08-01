@@ -1,0 +1,44 @@
+.suggestion {
+    margin-top: 200px;
+    margin-bottom: 200px;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__wrapper {
+        box-sizing: border-box;
+        padding: clamp(2.5rem, -0.838rem + 7.85vw, 6.25rem) clamp(1.25rem, -0.975rem + 5.24vw, 3.75rem);
+        display: flex;
+        justify-content: space-between;
+        gap: 40px 20px;
+        max-width: 1224px;
+        margin-top: 80px;
+
+        @media (max-width: 780px) {
+            flex-direction: column;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__descr {
+        margin-top: clamp(0.625rem, -0.599rem + 2.88vw, 2rem);
+    }
+
+    &__image-wrapper {
+        margin-left: -50px;
+        flex: 0 0 calc(516px / 1224px * 100%);
+        align-self: center;
+    }
+
+    &__image {
+        width: 100%;
+        height: auto;
+    }
+}
