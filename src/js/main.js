@@ -13,3 +13,27 @@ if (menuBtn && menu) {
         document.body.classList.remove('_no-scroll');
     })
 }
+
+const swiper = new Swiper('.forpartners__slider', {
+    // Optional parameters
+    direction: 'horizontal',
+    loop: false,
+    slidesPerView: 1,
+    spaceBetween: 30,
+
+    breakpoints: {
+        720: {
+            slidesPerView: 2
+        },
+
+        1224: {
+            slidesPerView: 3
+        }
+    },
+  
+    // Navigation arrows
+    navigation: {
+      nextEl: '.forpartners__slider-btn._next',
+      prevEl: '.forpartners__slider-btn._prev',
+    },
+  });

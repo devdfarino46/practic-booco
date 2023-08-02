@@ -12,6 +12,10 @@
     font-weight: 500;
 }
 
+body._no-scroll {
+    overflow: hidden;
+}
+
 [class *= "__container"] {
     max-width: 1444px;
     min-width: 360px;
@@ -114,12 +118,49 @@
 
     &_outline {
         border: 2px solid var(--accent-color);
-        background: white;
         padding: 16px 34px;
+        background: radial-gradient(116.62% 84.16% at 22.68% 20.40%, rgba(231, 231, 231, 0.20) 0%, rgba(255, 255, 255, 0.00) 100%), rgba(255, 255, 255, 0.20);
+        backdrop-filter: blur(10px);
 
         @media (any-hover: hover) {
             &:hover {
                 background-color: var(--accent-color);
+            }
+        }
+    }
+}
+
+.slider-btn {
+    display: inline-flex;
+    padding: 18px;
+    border-radius: 100%;
+    border: 2px solid var(--accent-light-color);
+    transition: border-color 0.3s ease;
+    background: radial-gradient(116.62% 84.16% at 22.68% 20.40%, rgba(231, 231, 231, 0.20) 0%, rgba(255, 255, 255, 0.00) 100%), rgba(255, 255, 255, 0.20);
+    backdrop-filter: blur(10px);
+
+    svg path {
+        stroke: var(--accent-light-color);
+        transition: stroke 0.3s ease;
+    }
+
+    &_prev {
+        svg {
+            transform: rotate(180deg);
+        }
+    }
+
+    &:disabled {
+        opacity: 0;
+        cursor: default;
+    }
+
+    @media (any-hover: hover) {
+        &:hover:not(&:disabled) {
+            border-color: var(--accent2-color);
+
+            svg path {
+                stroke: var(--accent2-color);
             }
         }
     }
@@ -147,11 +188,11 @@
             border: 2px solid var(--accent-light-color);
             padding: 16px 28px;
         }
+    }
 
-        &:focus {
-            border: 2px solid var(--accent-color);
-            padding: 16px 28px;
-        }
+    &:focus {
+        border: 2px solid var(--accent-color);
+        padding: 16px 28px;
     }
 }
 
@@ -187,3 +228,4 @@
 @import 'blocks/bronsys';
 @import 'blocks/about';
 @import 'blocks/suggestion';
+@import 'blocks/forpartners';
