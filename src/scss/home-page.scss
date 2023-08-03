@@ -1,0 +1,109 @@
+.header {
+    position: relative;
+
+    .bg-decor._1 {
+        top: -116px;
+        right: -309px;
+        background-color: var(--accent2-color);
+    }
+}
+
+.fastreq._1 {
+    position: relative;
+
+    .bg-decor._1 {
+        left: -207px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+.bronsys {
+    position: relative;
+
+    .bg-decor._1 {
+        top: 99px;
+        right: -169px;
+    }
+}
+
+.about {
+    position: relative;
+
+    .bg-decor._1 {
+        top: -174px;
+        left: -50px;
+    }
+
+    .bg-decor._2 {
+        top: 177px;
+        left: -207px;
+        background-color: var(--accent2-color);
+    }
+
+    .bg-decor._3 {
+        top: -174px;
+        right: -309px;
+        background-color: var(--accent2-color);
+    }
+}
+
+.forpartners {
+    position: relative;
+
+    .bg-decor._1 {
+        top: 104px;
+        right: -309px;
+        background-color: var(--accent2-color);
+    }
+}
+
+.fastreq._2 {
+    position: relative;
+
+    .bg-decor._1 {
+        left: -207px;
+        top: 140px;
+    }
+}
+
+.suggestion {
+    position: relative;
+
+    .bg-decor._1 {
+        right: -169px;
+        top: 358px;
+    }
+}
+
+.projects {
+    position: relative;
+
+    .bg-decor._1 {
+        top: 219px;
+        left: -50px;
+    }
+
+    .bg-decor._2 {
+        top: 270px;
+        left: -207px;
+        background-color: var(--accent2-color);
+    }
+
+    .bg-decor._3 {
+        top: 219px;
+        right: -309px;
+        background-color: var(--accent2-color);
+    }
+}
+
+.footer {
+    position: relative;
+
+    .bg-decor._1 {
+        bottom: -509px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: var(--accent2-color);
+    }
+}

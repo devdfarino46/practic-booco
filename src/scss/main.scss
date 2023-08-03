@@ -130,7 +130,7 @@ body._no-scroll {
     }
 }
 
-.slider-btn {
+.nav-btn {
     display: inline-flex;
     padding: 18px;
     border-radius: 100%;
@@ -138,6 +138,8 @@ body._no-scroll {
     transition: border-color 0.3s ease;
     background: radial-gradient(116.62% 84.16% at 22.68% 20.40%, rgba(231, 231, 231, 0.20) 0%, rgba(255, 255, 255, 0.00) 100%), rgba(255, 255, 255, 0.20);
     backdrop-filter: blur(10px);
+    width: max-content;
+    height: max-content;
 
     svg path {
         stroke: var(--accent-light-color);
@@ -203,7 +205,7 @@ body._no-scroll {
 
     span {
         display: flex;
-        background-color: var(--accent-color);
+        background-color: var(--accent2-color);
         height: 4px;
         width: 32px;
         border-radius: 100ch;
@@ -221,11 +223,23 @@ body._no-scroll {
     backdrop-filter: blur(10px);
 }
 
+.bg-decor {
+    position: absolute;
+    width: 518px;
+    height: 546px;
+    background: var(--accent-color);
+    border-radius: 40px;
+    filter: blur(200px);
+    z-index: -3;
+}
+
 @import 'blocks/menu';
 @import 'blocks/header';
+@import 'blocks/footer';
 @import 'blocks/hero';
 @import 'blocks/fastreq';
 @import 'blocks/bronsys';
 @import 'blocks/about';
 @import 'blocks/suggestion';
 @import 'blocks/forpartners';
+@import 'blocks/projects';
