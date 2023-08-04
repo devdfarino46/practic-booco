@@ -10,6 +10,8 @@ const babelify = require('babelify');
 const imagemin = require('gulp-imagemin');
 const changed = require('gulp-changed');
 const svgSprite = require('gulp-svg-sprite');
+const webp = require('gulp-webp');
+const copy = require('gulp-copy');
 
 
 // Browsersync init
@@ -46,7 +48,6 @@ function _sass() {
 // Generate fonts.scss
 function _fonts() {
     return gulp.src("src/font/**/*.+(woff|woff2)")
-        .pipe(gulp.dest("dist/assets/font"))
         .pipe(fontfacegen({
             filepath: "./src/scss/base",
             filename: "_fonts.scss"
@@ -67,8 +68,10 @@ function _compileJS() {
 
 // Optimization images
 function _imageMin() {
-    return gulp.src(["src/img/**/*.+(png|jpg|jpeg|svg|ico|gif)"])
-        .pipe(changed('src/img/'))
+    return gulp.src(["src/s_img/**/*.+(png|jpg|jpeg)"])
+    .pipe(changed('src/img', {
+        extension: '.webp'
+    }))
         .pipe(imagemin([
             imagemin.mozjpeg({
                 quality: 70,
@@ -81,8 +84,19 @@ function _imageMin() {
         ], {
             verbose: true
         }))
+        .pipe(webp())
         .pipe(gulp.dest("src/img"))
-        .pipe(browserSync.stream());
+}
+
+function _svgMin() {
+    return gulp.src(["src/s_img/**/*.svg"])
+        .pipe(changed('src/img'))
+        .pipe(imagemin([
+            imagemin.svgo()
+        ], {
+            verbose: true
+        }))
+        .pipe(gulp.dest("src/img"));
 }
 
 // Generate SVG sprites
@@ -123,11 +137,36 @@ function _svgSprite() {
         .pipe(gulp.dest('src/img'));
 }
 
+function _copy(done) {
+    gulp.src('src/*.html')
+        .pipe(gulp.dest('dist/'));
+
+    gulp.src('src/css/**/*.css')
+        .pipe(gulp.dest('dist/css'));
+
+    gulp.src('src/img/**/*')
+        .pipe(gulp.dest('dist/img'));
+
+    gulp.src("src/font/**/*.+(woff|woff2)")
+        .pipe(gulp.dest("dist/font"));
+
+    gulp.src("src/js/**/*.js")
+        .pipe(gulp.dest("dist/js"));
+
+    done();
+}
+
 exports.default = gulp.parallel(
     _sass,
     _imageMin,
+    _svgMin,
     _bs,
     _whatching
-)
+);
+
+exports.compile = gulp.series(
+    _copy,
+    _compileJS,
+);
 
 exports.fonts = _fonts;
